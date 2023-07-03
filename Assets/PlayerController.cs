@@ -12,11 +12,18 @@ public class PlayerController : MonoBehaviour
 
     public GameObject hb; 
 
-    private HBSCRIPT _hb; 
+    private HBSCRIPT _hb;
+    public bool isInArea;
+    
+
+    public Transform hoverBoardPoint;
+    public Transform hoverBoardPoint2;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        isInArea = false; 
         speed = 10f;
 
 
@@ -39,11 +46,16 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
 
         {
-            Debug.Log("PRESSING E");
-            _hb.moveForce = 2000;
-            _hb.turnTorque = 500; 
+            
+            player.transform.position = hoverBoardPoint.transform.position;
+
+            Debug.Log("TELEPORT");
 
         }
+
+
+       
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -51,8 +63,12 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "hbi")
         {
             
-            Debug.Log("PLAYER COLLIDE)");
-           
+            Debug.Log("PLAYER IN HB AREA)");
+
+        }
+        else
+        {
+            return;
         }
     }
 }
