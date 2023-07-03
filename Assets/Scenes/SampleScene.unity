@@ -451,14 +451,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764753842}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1cb969f32eac594394daec2b46e6b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   multiplier: 2.5
-  moveForce: 0
-  turnTorque: 0
+  moveForce: 3000
+  turnTorque: 300
+  anything: 0
   anchors:
   - {fileID: 58412643}
   - {fileID: 1076165789}
@@ -661,7 +662,7 @@ GameObject:
   - component: {fileID: 1602253103}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: MainPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -679,8 +680,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  player: {fileID: 1602253108}
-  hb: {fileID: 764753842}
+  player: {fileID: 1602253102}
+  board: {fileID: 764753842}
+  _hb: {fileID: 764753843}
   isInArea: 0
   hoverBoardPoint: {fileID: 70364583}
   hoverBoardPoint2: {fileID: 0}

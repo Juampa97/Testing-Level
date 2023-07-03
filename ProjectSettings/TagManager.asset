@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hoverboard
   - hbi
+  - MainPlayer
   layers:
   - Default
   - TransparentFX

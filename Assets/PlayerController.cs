@@ -8,11 +8,11 @@ public class PlayerController : MonoBehaviour
     public float speed;   //CHARACTER SPEED 
     
     private PlayerController _pc; 
-    public Transform player;
+    public GameObject player;
+    public GameObject board; 
+    
 
-    public GameObject hb; 
-
-    private HBSCRIPT _hb;
+    public HBSCRIPT _hb;
     public bool isInArea;
     
 
@@ -26,10 +26,9 @@ public class PlayerController : MonoBehaviour
         isInArea = false; 
         speed = 10f;
 
+        player = GameObject.FindGameObjectWithTag("MainPlayer");
 
-        _hb = GetComponent<HBSCRIPT>(); 
-        
-
+       
     }
 
     // Update is called once per frame
@@ -46,11 +45,24 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
 
         {
-            
-            player.transform.position = hoverBoardPoint.transform.position;
-
             Debug.Log("TELEPORT");
 
+            
+            player.transform.position = hoverBoardPoint.transform.position;
+            
+            
+
+
+
+
+            //_hb.anything = 10000;
+            //_hb.turnTorque = 400; 
+            //_hb.moveForce = 5000;
+
+            _hb.enabled = true; 
+                
+
+            
         }
 
 

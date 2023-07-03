@@ -9,7 +9,9 @@ public class HBSCRIPT : MonoBehaviour
 
     public float multiplier;
     public float moveForce;
-    public float turnTorque; 
+    public float turnTorque;
+
+    public int anything; 
 
     public Transform[] anchors = new Transform[4];
     RaycastHit[] hits = new RaycastHit[4]; 
@@ -32,7 +34,7 @@ public class HBSCRIPT : MonoBehaviour
         for (int i = 0; i < 4; i++)
             ApplyForce(anchors[i], hits[i]);
         _hoverBoard.AddForce(Input.GetAxis("Vertical") * moveForce * transform.forward);
-        _hoverBoard.AddTorque(Input.GetAxis("Horizontal") * turnTorque * transform.up); 
+        _hoverBoard.AddTorque(Input.GetAxis("Horizontal") * turnTorque * transform.up);
     }
 
     void ApplyForce( Transform anchor, RaycastHit hit)
@@ -44,4 +46,9 @@ public class HBSCRIPT : MonoBehaviour
             _hoverBoard.AddForceAtPosition(transform.up * force * multiplier, anchor.position, ForceMode.Acceleration);
         }
     }
+
+    //public void MovingMechanic()
+    //{
+        
+    //}
 }
