@@ -49,27 +49,16 @@ public class PlayerController : MonoBehaviour
 
             
             player.transform.position = hoverBoardPoint.transform.position;
-            
-            
-
-
-
-
-            //_hb.anything = 10000;
-            //_hb.turnTorque = 400; 
-            //_hb.moveForce = 5000;
-
+            player.transform.SetParent(board.transform);
+            speed = 0f;
+            _hb.turnTorque = 400;
+            _hb.moveForce = 5000;
+            _hb.multiplier = 3; 
             _hb.enabled = true; 
-                
-
             
         }
 
-
-       
-        
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "hbi")
@@ -84,5 +73,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+
+       
+        
+
+                
+
+
+
+
+
+
+          
+
 
 
