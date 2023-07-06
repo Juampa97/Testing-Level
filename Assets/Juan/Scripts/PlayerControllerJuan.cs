@@ -160,6 +160,10 @@ public class PlayerControllerJuan : MonoBehaviour
             }
 
             //SWIMMING JUAN
+            if (isSwimming == true)
+            {
+                
+            }
 
             if (isFloating == true)
             {
@@ -291,6 +295,7 @@ public class PlayerControllerJuan : MonoBehaviour
         {
             GetComponent<CapsuleCollider>().direction = 2; 
             isFloating = true;
+            
             animator.SetBool("IsFloating", true); 
         } else
         {
