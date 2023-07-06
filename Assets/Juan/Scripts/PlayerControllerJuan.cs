@@ -72,7 +72,14 @@ public class PlayerControllerJuan : MonoBehaviour
     private bool isFloating;
     private bool isSwimming;
 
-    
+
+    public GameObject player;
+    public Transform hoverBoardPoint;
+
+   
+
+    private bool isInHbArea;
+    public HBSCRIPT _hb;
 
     void Start()
     {
@@ -93,6 +100,10 @@ public class PlayerControllerJuan : MonoBehaviour
             
         isFloating = false;
         isSwimming = false;
+
+
+        isInHbArea = false;
+
 
         GetComponent<CapsuleCollider>(); 
     }
@@ -181,6 +192,33 @@ public class PlayerControllerJuan : MonoBehaviour
                 }
             }
 
+
+            //HOVERBOARD - JUAN
+
+            if(isInHbArea == true)
+            {
+
+                if (Input.GetKeyDown(KeyCode.E))
+
+                {
+                    Debug.Log("TELEPORT");
+
+
+                    player.transform.position = hoverBoardPoint.transform.position;
+
+
+                    player.transform.SetParent(hoverBoardPoint);
+                    player.transform.SetParent(hoverBoardPoint, false);
+                    
+
+                    moveSpeed = 0f;
+
+                    _hb.turnTorque = 400;
+                    _hb.moveForce = 5000;
+                    _hb.multiplier = 4;
+                    
+                }
+            }
 
 
 
@@ -304,12 +342,24 @@ public class PlayerControllerJuan : MonoBehaviour
             animator.SetBool("IsFloating", false);
             animator.SetBool("IsSwimming", false);
         }
+
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("hbi"))
+        {
+            Debug.Log("IN HB AREA");
+            isInHbArea = true; 
+        }
+    }
+
+
 
     //private void Swimming()
     //{
 
-        
+
 
     //}
 
