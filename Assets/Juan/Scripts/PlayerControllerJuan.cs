@@ -67,10 +67,12 @@ public class PlayerControllerJuan : MonoBehaviour
 
 
 
-    //SWIMMING
+    //SWIMMING BOOLS - JUAN
 
     private bool isFloating;
-    private bool isSwimming; 
+    private bool isSwimming;
+
+    
 
     void Start()
     {
@@ -87,8 +89,12 @@ public class PlayerControllerJuan : MonoBehaviour
         jumpsRemaining = maxJumps;
         currentHealth = maxHealth;
 
+        //SWIMMING BOOLS - JUAN
+            
         isFloating = false;
-        isSwimming = false; 
+        isSwimming = false;
+
+        GetComponent<CapsuleCollider>(); 
     }
 
     void Update()
@@ -117,9 +123,14 @@ public class PlayerControllerJuan : MonoBehaviour
             {
                 if (isGrounded == true)
                 {
+                    
                     animator.SetBool("IsJumping", false);
                     animator.SetBool("IsFalling", true);
                     animator.SetBool("IsDoubleJumping", false);
+
+                    //SWIMMING  
+                    //animator.SetBool("IsFloating", false);
+                    //animator.SetBool("IsSwimming", false);
                 }
                 if (jumpsRemaining == 0)
                 {
@@ -157,12 +168,17 @@ public class PlayerControllerJuan : MonoBehaviour
                     Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
                     transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime); //Specifying how I want the character to rotate
                     animator.SetBool("IsSwimming", true);
+                    isSwimming = true; 
 
                 } else
                 {
+                    isSwimming = false; 
                     animator.SetBool("IsSwimming", false);
                 }
             }
+
+
+
 
 
             //PUNCH ATTACK - JUAN
@@ -270,10 +286,18 @@ public class PlayerControllerJuan : MonoBehaviour
             attackScript.smashing = false;
         }
 
+        //SWIMMING - JUAN
         if (collision.gameObject.CompareTag("Water"))
         {
+            GetComponent<CapsuleCollider>().direction = 2; 
             isFloating = true;
             animator.SetBool("IsFloating", true); 
+        } else
+        {
+            GetComponent<CapsuleCollider>().direction = 1;
+            isFloating = false;
+            animator.SetBool("IsFloating", false);
+            animator.SetBool("IsSwimming", false);
         }
     }
 
