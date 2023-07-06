@@ -7,6 +7,8 @@ TagManager:
   - Hoverboard
   - hbi
   - MainPlayer
+  - Ground
+  - Water
   layers:
   - Default
   - TransparentFX
