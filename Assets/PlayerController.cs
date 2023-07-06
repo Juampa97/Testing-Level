@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
             
             player.transform.position = hoverBoardPoint.transform.position;
-            player.transform.SetParent(board.transform);
+            
             speed = 0f;
             _hb.turnTorque = 400;
             _hb.moveForce = 5000;
