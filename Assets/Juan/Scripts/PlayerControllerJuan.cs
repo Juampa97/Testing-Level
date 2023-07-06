@@ -75,10 +75,12 @@ public class PlayerControllerJuan : MonoBehaviour
 
     public GameObject player;
     public Transform hoverBoardPoint;
-
+    public Transform hoverBoard;
+    public Transform lechie; 
    
 
     private bool isInHbArea;
+    private bool isRiding;
     public HBSCRIPT _hb;
 
     void Start()
@@ -103,7 +105,7 @@ public class PlayerControllerJuan : MonoBehaviour
 
 
         isInHbArea = false;
-
+        isRiding = false; 
 
         GetComponent<CapsuleCollider>(); 
     }
@@ -193,32 +195,40 @@ public class PlayerControllerJuan : MonoBehaviour
             }
 
 
+            
+
             //HOVERBOARD - JUAN
 
             if(isInHbArea == true)
             {
 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.F))
 
                 {
+                    isRiding = true; 
                     Debug.Log("TELEPORT");
 
 
-                    player.transform.position = hoverBoardPoint.transform.position;
-
-
-                    player.transform.SetParent(hoverBoardPoint);
-                    player.transform.SetParent(hoverBoardPoint, false);
-                    
-
+                    lechie.transform.position = hoverBoardPoint.transform.position;
+                    //player.transform.SetParent(hoverBoardPoint);
+                    //player.transform.SetParent(hoverBoardPoint, false);
                     moveSpeed = 0f;
 
                     _hb.turnTorque = 400;
                     _hb.moveForce = 5000;
                     _hb.multiplier = 4;
-                    
+                } else
+                {
+                    isRiding = false; 
                 }
             }
+                    
+                    
+
+
+
+                    
+                    
 
 
 
@@ -350,11 +360,20 @@ public class PlayerControllerJuan : MonoBehaviour
         if (other.gameObject.CompareTag("hbi"))
         {
             Debug.Log("IN HB AREA");
-            isInHbArea = true; 
+            isInHbArea = true;
         }
+       
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("hbi"))
+        {
+            Debug.Log("IN HB AREA");
+            isInHbArea = false;
+        }
 
+    }
 
     //private void Swimming()
     //{
