@@ -173,10 +173,7 @@ public class PlayerControllerJuan : MonoBehaviour
             }
 
             //SWIMMING JUAN
-            if (isSwimming == true)
-            {
-                
-            }
+            
 
             if (isFloating == true)
             {
