@@ -75,7 +75,8 @@ public class PlayerControllerJuan : MonoBehaviour
 
     public GameObject player;
     public Transform hoverBoardPoint;
-    public Transform hoverBoard;
+    //public Transform hoverBoard;
+    public GameObject hoverBoard;
     public Transform lechie; 
    
 
@@ -106,6 +107,8 @@ public class PlayerControllerJuan : MonoBehaviour
 
         isInHbArea = false;
         isRiding = false; 
+
+        
 
         GetComponent<CapsuleCollider>(); 
     }
@@ -207,7 +210,7 @@ public class PlayerControllerJuan : MonoBehaviour
 
 
                     lechie.transform.position = hoverBoardPoint.transform.position;
-                    //player.transform.SetParent(hoverBoardPoint);
+                    player.transform.SetParent(hoverBoard.transform);
                     //player.transform.SetParent(hoverBoardPoint, false);
                     moveSpeed = 0f;
 

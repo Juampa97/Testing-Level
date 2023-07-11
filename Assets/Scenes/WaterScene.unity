@@ -1443,7 +1443,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3578816363434239584, guid: a5d8223457c593c4aa541c7685defc1b, type: 3}
   m_PrefabInstance: {fileID: 1968908014}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1326533778}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1cb969f32eac594394daec2b46e6b5d, type: 3}
@@ -3338,6 +3338,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1686021177305034388, guid: ebee340de387f334f9ac44e044abd8fb, type: 3}
   m_PrefabInstance: {fileID: 550078215}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1326533778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6227576530097671709, guid: a5d8223457c593c4aa541c7685defc1b, type: 3}
+  m_PrefabInstance: {fileID: 1968908014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1366848109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3499,6 +3504,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2271975306032658998, guid: 77646d5d5b2b53c4ebcdd899b08d762a, type: 3}
+      propertyPath: hoverBoard
+      value: 
+      objectReference: {fileID: 1326533778}
     - target: {fileID: 2271975306032658998, guid: 77646d5d5b2b53c4ebcdd899b08d762a, type: 3}
       propertyPath: hoverBoardPoint
       value: 

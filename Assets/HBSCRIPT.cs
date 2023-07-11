@@ -47,7 +47,23 @@ public class HBSCRIPT : MonoBehaviour
         }
     }
 
-  
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Player"))
+    //    {
+    //        Debug.Log("Riding"); 
+    //        other.transform.SetParent(transform); 
+    //    }
+    //}
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Player"))
+    //    {
+    //        Debug.Log("Riding");
+    //        other.transform.SetParent(null);
+    //    }
+    //}
 
     //public void MovingMechanic()
     //{
