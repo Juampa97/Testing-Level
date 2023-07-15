@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UniverseSphere
-  m_Shader: {fileID: -6465566751694194690, guid: d2ca8899fe711184282968f8b37d1384, type: 3}
+  m_Name: GlowGreen
+  m_Shader: {fileID: -6465566751694194690, guid: 0447c8d7b8a5b0041b6c0d870907f679, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
@@ -34,16 +34,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FresnelPower: 6
-    - _NoiseScale: 150
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ScrollSpeed: 0.003
     m_Colors:
-    - _InnerColor: {r: 0.6886792, g: 0.25013348, b: 0.25013348, a: 0}
-    - _OuterColor: {r: 0.754717, g: 0.754717, b: 0.754717, a: 0}
+    - _Color1: {r: 0.14400113, g: 1, b: 0, a: 0}
+    - _Color2: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &8215780790204242451
+--- !u!114 &3744813253040824199
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
